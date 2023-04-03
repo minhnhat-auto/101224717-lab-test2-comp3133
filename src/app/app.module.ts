@@ -3,16 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MissiondetailsComponent } from './missiondetails/missiondetails.component';
+import { MissionlistComponent } from './missionlist/missionlist.component';
+import { MaterialModule } from './material.component';
+import { HttpClientModule } from '@angular/common/http'
+import { SpacexapiService } from './network/spacexapi.service';
+import { MissionfilterComponent } from './missionfilter/missionfilter.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MissiondetailsComponent,
+    MissionlistComponent,
+    MissionfilterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule, 
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SpacexapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
